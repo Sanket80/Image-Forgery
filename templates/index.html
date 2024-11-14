@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Forgery Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .btn-upload, .btn-submit {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+        .btn-upload {
+            background-color: #5c6bc0;
+            color: #fff;
+        }
+        .btn-submit {
+            background-color: #43a047;
+            color: #fff;
+        }
+        .btn-upload:hover, .btn-submit:hover {
+            opacity: 0.8;
+        }
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Image Forgery Detection</h2>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <label for="imageUpload" class="btn-upload">Upload Image</label>
+            <input type="file" id="imageUpload" name="image" accept="image/*">
+            <button type="submit" class="btn-submit">Check Image</button>
+        </form>
+    </div>
+</body>
+</html>
